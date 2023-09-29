@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+
+import system
+from sys import argv
+
+"""
+1.Output format: n=p*q
+2.Usage: factors <file>
+3.factorize(int)all integers should be factorized
+4. VARIABLE(" "):
+
+"""
+	b = 2
+
+	if value < 2:
+	return
+	print()
+	print(value, "<- ")
+	while value % b:
+        b += 1
+	print("{:.0f}={:.0f}*{:.0f}".format(value, value / b, b))
+	print()
+	print(value, "<- ")
+
+
+	if len(argv) != 2:
+	exit()
+
+	try:
+	with open(argv[1]) as file:
+	line = file.readline()
+
+	while line != "":
+	value = int(line.split('\n')[0])
+	factorize(value)
+	line = file.readline()
+	except FileNotFoundError:
+	print(f'File not found: {argv}')
+	except ValueError:
+	print(f'Invalid input in the file: {argv}')
+	except Exception as e:
+	print(f'An error occurred: {str(e)}')
+	pass
